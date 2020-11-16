@@ -181,12 +181,7 @@ func TestFind(t *testing.T) {
 
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d/%s", i, tt.s), func(t *testing.T) {
-			rr := ipsearch.Find(tt.s)
-			res := make([]string, 0)
-			for _, r := range rr {
-				res = append(res, tt.s[r[0]:r[1]])
-			}
-			assert.Equal(t, tt.res, res)
+			assert.Equal(t, tt.res, ipsearch.Find(tt.s))
 		})
 	}
 }

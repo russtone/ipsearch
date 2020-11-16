@@ -9,10 +9,9 @@ const (
 	maxIPv6OctetLen = 4
 )
 
-// Find returns positions of all found IPv4 and IPv6 addreses
-// in the given string.
-func Find(s string) [][2]int {
-	res := make([][2]int, 0)
+// Find returns all IPv4 and IPv6 addreses in the given string.
+func Find(s string) []string {
+	res := make([]string, 0)
 	last := 0
 
 outer:
@@ -39,7 +38,7 @@ outer:
 			for k := n; k > 0; k-- {
 				cc, ok := checkIPv4(s[i-k:])
 				if ok {
-					res = append(res, [2]int{i - k, i - k + cc})
+					res = append(res, s[i-k:i-k+cc])
 					last = i - k + cc
 					i += cc - k
 					continue outer
@@ -61,7 +60,7 @@ outer:
 			for k := n; k >= 0; k-- {
 				cc, ok := checkIPv6(s[i-k:])
 				if ok {
-					res = append(res, [2]int{i - k, i - k + cc})
+					res = append(res, s[i-k:i-k+cc])
 					last = i - k + cc
 					i += cc - k
 					continue outer

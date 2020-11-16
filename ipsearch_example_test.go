@@ -13,10 +13,10 @@ google.com has address 173.194.222.101
 yandex.ru has address 77.88.55.50
 yandex.ru has IPv6 address 2a02:6b8:a::a
 `
-	rr := ipsearch.Find(s)
+	ips := ipsearch.Find(s)
 
-	for _, r := range rr {
-		fmt.Println(s[r[0]:r[1]])
+	for _, ip := range ips {
+		fmt.Println(ip)
 	}
 
 	// Output:
