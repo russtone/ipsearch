@@ -13,10 +13,10 @@ const (
 // in the given string.
 func Find(s string) [][2]int {
 	res := make([][2]int, 0)
-	last := -1
+	last := 0
 
 outer:
-	for i := 0; i < len(s); {
+	for i := 1; i < len(s); {
 		switch s[i] {
 		case '.':
 			// Go back to find possible start of
