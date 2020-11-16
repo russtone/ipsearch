@@ -16,6 +16,10 @@ func TestFind(t *testing.T) {
 	}{
 		// IPv4
 		{
+			".123",
+			[]string{},
+		},
+		{
 			"---192.168.---",
 			[]string{},
 		},
