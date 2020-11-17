@@ -69,6 +69,10 @@ func TestFind(t *testing.T) {
 
 		// IPv6
 		{
+			"::1",
+			[]string{"::1"},
+		},
+		{
 			"---1:2:3:4:5:6:ffff:192.168..1---",
 			[]string{},
 		},

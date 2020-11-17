@@ -15,7 +15,7 @@ func Find(s string) []string {
 	last := 0
 
 outer:
-	for i := 1; i < len(s); {
+	for i := 0; i < len(s); {
 		switch s[i] {
 		case '.':
 			// Go back to find possible start of
